@@ -4,11 +4,11 @@
 
 ## Aim
 
-Use the Xilinx Vivado Design to write a piece of HDL codeand then implement it with in the configurable hardware, which is BASYS3 FPGA board.
+Use the Xilinx Vivado Design to write a piece of HDL code and then implement it with in the configurable hardware, which is BASYS3 FPGA board.
 
 ## Preview about today's task
 
-Field Programmable Gate Array(FPGA)  is widely used in the field of electroncis. Therefore, it is important for elecroncis and electrical Engineering students to manipulate it. In this lab, I will be tought to use a standard Hardware Description Language called Verilog for FPGA hardware programming.
+Field Programmable Gate Array(FPGA)  is widely used in the field of electronics. Therefore, it is important for electronics and electrical Engineering students to manipulate it. In this lab, I will be taught to use a standard Hardware Description Language called Verilog for FPGA hardware programming.
 
 ## In the lab:
 
@@ -44,13 +44,13 @@ In this lab we use **Create files** and choose the type fo file as **Verilog** a
 
 After that we need to define the module for the source. You need to define the input or output. Define the name of the input and output, use bus or not and the bits.
 
-![03](03.png)
+![03](https://github.com/taleman1997/Digital_lab_3/blob/master/Review_digit_lab_/graph/03.png)
 
 
 
 After that the source code is created:
 
-![04](https://github.com/taleman1997/Digital_lab_3/blob/master/Review_digit_lab_/graph\04.png)
+![04](https://github.com/taleman1997/Digital_lab_3/blob/master/Review_digit_lab_/graph/04.png)
 
 `timescale 1ns / 1ps` relates to how the wait syntax `#` is handled by the simulator. For example:
 
@@ -59,7 +59,7 @@ timescale 1ns / 1ps
 # 500
 ```
 
-This means the programe will wait for 500 ns and then implement the following code.
+This means the program will wait for 500 ns and then implement the following code.
 
 `module` is a key word followed by file name. What insides is the input and output list called **Module interface**. `endmodule` consistent with `module` showing the end of program.
 
@@ -69,7 +69,7 @@ Now we add the first instruction into the source file. **It should be noticed th
 assign OUT = IN;
 ```
 
-`assign` statement is used to tie one variable to another. Using this sentence, we cannect our input(push button) to our ourput(LED). **It should be notice that the reg type can not be assigned for reg can store data but it can not be driven.**
+`assign` statement is used to tie one variable to another. Using this sentence, we connect our input(push button) to our output(LED). **It should be notice that the reg type can not be assigned for reg can store data but it can not be driven.**
 
 ### **Step 3: Synthesis**
 
@@ -77,17 +77,17 @@ After we add the code to the source file, click the button "Run Synthesis" under
 
 **About Synthesis:**
 
-Synthesis is the process of converting a high-level description of a design into an optimized gate-level representation. Once synthesis is completed, the **"Open Synthesiszed Design"** is available to use and then we can see the technology schematics, which shows how your design would be implemented using standard device elements, such as LUTs,registers and input/output buffers. Based on the code we add into the source file, the schematic should be like this:
+Synthesis is the process of converting a high-level description of a design into an optimized gate-level representation. Once synthesis is completed, the **"Open Synthesized Design"** is available to use and then we can see the technology schematics, which shows how your design would be implemented using standard device elements, such as LUTs,registers and input/output buffers. Based on the code we add into the source file, the schematic should be like this:
 
-![05](https://github.com/taleman1997/Digital_lab_3/blob/master/Review_digit_lab_/graph\05.png)
+![05](https://github.com/taleman1997/Digital_lab_3/blob/master/Review_digit_lab_/graph/05.png)
 
-**Note:** there is also RTL schematics which is avaliable to check before synthesis. RTL schematic illurstrate your design in  terms of registers and logic gates.(This can be tested in the exam!)
+**Note:** there is also RTL schematics which is available to check before synthesis. RTL schematic illustrate your design in  terms of registers and logic gates.(This can be tested in the exam!)
 
 ### **Step4: Simulation**
 
-Before simulate the design, the input and output signal are needed to dirve the simulation. And this is done by testbench. Then we need to add source file and choose the file type as **"Add or create simulation file"**, set a purpose file name and set the type of file as **"Verilog"** . In the define module window, do not add any ports. After all settings, the source code file shoule like this:
+Before simulate the design, the input and output signal are needed to drive the simulation. And this is done by testbench. Then we need to add source file and choose the file type as **"Add or create simulation file"**, set a purpose file name and set the type of file as **"Verilog"** . In the define module window, do not add any ports. After all settings, the source code file should like this:
 
-![06](https://github.com/taleman1997/Digital_lab_3/blob/master/Review_digit_lab_/graph\06.png)
+![06](https://github.com/taleman1997/Digital_lab_3/blob/master/Review_digit_lab_/graph/06.png)
 
 
 
@@ -98,7 +98,7 @@ reg IN; // inputs
 wire OUT; //outputs
 ```
 
-I think the explain about the `reg` and `wire` is not clear enough(at least for me). Then this is my own understanding. **Wire** means conduction. Once the input changed, the ouput change direcly. While **reg** can have original value and the value of **reg** can only be changed when a **trigger** activates on it.
+I think the explain about the `reg` and `wire` is not clear enough(at least for me). Then this is my own understanding. **Wire** means conduction. Once the input changed, the output change directly. While **reg** can have original value and the value of **reg** can only be changed when a **trigger** activates on it.
 
 **Note: wire can be set by `assign`  but reg can only be set in `initial`or `always` sentence**
 
@@ -153,6 +153,30 @@ module Helloworld_TB{
 }
 ```
 
-After that click **"Run Simulation"** and choose **"Run Behavioul Simulation"**. 
+After that click **"Run Simulation"** and choose **"Run Behavioral Simulation"**. 
 
-### Step 5: 
+### Step 5:  Create the design constrains
+
+XDC is used to recognize the pin-out of the device. We need to write XDC to tell the tool which pins are connected to which outputs of the FPGA.
+
+Then create the new source file and choose the **"add or generate constraints"**  choose the file type as **XDC** and set purpose file name. After that add the code below into the source file.
+
+```verilog
+set_property PACKAGE_PIN V17 [get_ports IN]
+set_property IONSTADARD LVCMOS33 [get_ports IN]
+
+set_property PACKAGE_PIN V16 [get_ports OUT]
+set_property IONSTADARD LVCMOS33 [get_ports OUT]
+```
+
+This is just connect the input signal in pin V17 and output pin in V16.
+
+### **Step 6: The rest process:**
+
+Run the implementation, generate the bitstream file, open the new target and program the devices. Then we can use the switch to control the LED.
+
+
+
+## Attention:
+
+The first time program the FPGA may have some problems. But in most case the mistakes focus on the spelling issue and coding. If mistakes occurs, just check the code especially spelling.
