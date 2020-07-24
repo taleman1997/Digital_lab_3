@@ -20,15 +20,13 @@ What is used in this lab is Xilinx Vivado Design. And the student version can be
 
 Open the Vivado software and click the "create new project" tab
 
-![01](graph\01.png)
-
-
+![01](https://github.com/taleman1997/Digital_lab_3/blob/master/Review_digit_lab_/graph/01.png)
 
 Then create a new project and input the correct path. After that choose "RTL project" which allows you to run RTL analysis, synthesis, implementation and other function. Besides tick the box "Do not specify source". Then go next.
 
 In the Default part, set the parameters as below.
 
-![02](graph\02.png)
+![02](https://github.com/taleman1997/Digital_lab_3/blob/master/Review_digit_lab_/graph/02.png)
 
 These settings are related to the board we used. After that the project is created
 
@@ -52,7 +50,7 @@ After that we need to define the module for the source. You need to define the i
 
 After that the source code is created:
 
-![04](graph\04.png)
+![04](https://github.com/taleman1997/Digital_lab_3/blob/master/Review_digit_lab_/graph\04.png)
 
 `timescale 1ns / 1ps` relates to how the wait syntax `#` is handled by the simulator. For example:
 
@@ -81,7 +79,7 @@ After we add the code to the source file, click the button "Run Synthesis" under
 
 Synthesis is the process of converting a high-level description of a design into an optimized gate-level representation. Once synthesis is completed, the **"Open Synthesiszed Design"** is available to use and then we can see the technology schematics, which shows how your design would be implemented using standard device elements, such as LUTs,registers and input/output buffers. Based on the code we add into the source file, the schematic should be like this:
 
-![05](graph\05.png)
+![05](https://github.com/taleman1997/Digital_lab_3/blob/master/Review_digit_lab_/graph\05.png)
 
 **Note:** there is also RTL schematics which is avaliable to check before synthesis. RTL schematic illurstrate your design in  terms of registers and logic gates.(This can be tested in the exam!)
 
@@ -89,7 +87,7 @@ Synthesis is the process of converting a high-level description of a design into
 
 Before simulate the design, the input and output signal are needed to dirve the simulation. And this is done by testbench. Then we need to add source file and choose the file type as **"Add or create simulation file"**, set a purpose file name and set the type of file as **"Verilog"** . In the define module window, do not add any ports. After all settings, the source code file shoule like this:
 
-![06](graph\06.png)
+![06](https://github.com/taleman1997/Digital_lab_3/blob/master/Review_digit_lab_/graph\06.png)
 
 
 
