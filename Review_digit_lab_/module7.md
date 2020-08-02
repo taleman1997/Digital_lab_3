@@ -16,7 +16,7 @@ According to the tutorial, the first piece logic control is a 27-bit counter.
 
 **Why 27-bit ?** $\ 2^{27} = 134217728$ . Then $\ 2^{27}$ is the most effective binary form for $\ 10^{8}$ . The diagram is as below.
 
-![](https://github.com/taleman1997/Digital_lab_3/blob/master/Review_digit_lab_/graph/13.pngng)
+![](https://github.com/taleman1997/Digital_lab_3/blob/master/Review_digit_lab_/graph/13.png)
 
 Then we can generate the code for the module
 
