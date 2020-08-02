@@ -8,13 +8,13 @@ Design and implement a VGA interface that allows the control of individual pixel
 
 **VGA:** Video Graphic Array
 
-![](C:\Users\taleman\Desktop\Review_digit_lab_\graph\20.png)
+![](https://github.com/taleman1997/Digital_lab_3/blob/master/Review_digit_lab_/graph/20.png)
 
 The diagram above shows the pin distribution of VGA. It is based on RGB and each color four bits. Therefore, it can display 4096 different color. From manual, it is important to create a circuit to derive sync and the color signal with the correct timing.
 
 The structure of the VGA is as below.
 
-![](C:\Users\taleman\Desktop\Review_digit_lab_\graph\21.png)
+![](https://github.com/taleman1997/Digital_lab_3/blob/master/Review_digit_lab_/graph/21.png)
 
 The logic process the coordinate and give it back to the interface to let it display on the screen.
 
@@ -22,11 +22,11 @@ The logic process the coordinate and give it back to the interface to let it dis
 
 A video controller circuit must generate the HS and VS timings signal and coordinate the delivery of video data based on pixel clock. The VS signal defines the refresh frequency of the display or the frequency at which all information on the display is redrawn. The minimum refresh frequency is a function of the display's phosphor and electron beam intensity, with practical refresh frequencies falling in the 50Hz to 120Hz range. The number of lines to be displayed at a given refresh frequency defines the horizontal "retrace" frequency. For a 640-pixel by 480-row display using a 25 MHz pixel clock and 60 +/-1Hz refresh. Timings for sync pulse width and front and back porch intervals (porch intervals are the pre- and post-sync pulse times during which information cannot be displayed) are based on observations taken from actual VGA displays.
 
-![](C:\Users\taleman\Desktop\Review_digit_lab_\graph\22.png)
+![](https://github.com/taleman1997/Digital_lab_3/blob/master/Review_digit_lab_/graph/22.png)
 
 The beam scan horizontally first and then vertically. The graph below may help:
 
-![](C:\Users\taleman\Desktop\Review_digit_lab_\graph\23.png)
+![](https://github.com/taleman1997/Digital_lab_3/blob/master/Review_digit_lab_/graph/23.png)
 
 Based on that the relationship can be derived:
 $$
