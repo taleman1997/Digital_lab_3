@@ -22,7 +22,7 @@ Use 2 methods to built a 7-segments display decoder by using Boolean expression 
 
    There are 12 wires control the entire behavior of all four 7-segment display. AN0(AN1, AN2, AN3) controls which digit will be light up. All the LED's anodes are tied together but the LED cathodes remain separate.
 
-   ![](C:\Users\taleman\Desktop\Review_digit_lab_\graph\14.png)
+   ![](https://github.com/taleman1997/Digital_lab_3/blob/master/Review_digit_lab_/graph/14.png)
 
    **Attention:** As the anodes of the LED are tied together, logic '0' turns LED on.
 
@@ -49,13 +49,13 @@ module Decoding_the_world(
 
 The figure below illustrate the segment display of 0-F
 
-![](C:\Users\taleman\Desktop\Review_digit_lab_\graph\15.png)
+![](https://github.com/taleman1997/Digital_lab_3/blob/master/Review_digit_lab_/graph/15.png)
 
 For example, the top middle bit(called CA) will light up for the hexadecimal numbers: 0,2.3,5,6,7,8,9,A,C,E,F. So it is possible to use Karnaugh map to derive the Boolean expression that will correctly determine if an elelement should be on or off for each of the hexadecimal numbers
 
 The Karnaugh map is as below:
 
-![](C:\Users\taleman\Desktop\Review_digit_lab_\graph\16.png)
+![](https://github.com/taleman1997/Digital_lab_3/blob/master/Review_digit_lab_/graph/16.png)
 
 Then it allow us to derive all the Boolean expression from CA to CG.
 $$
@@ -140,7 +140,7 @@ module Decoding_the_world(
 
 **A Module within a Module**: This Verilog module is being designed for reuse. This mean that it should have an easy to use generic interface that allows complete control over all four sections of the display. It should be notice that the code above is designed for light up only one digit. The  structure of the code is as below:
 
-![](C:\Users\taleman\Desktop\Review_digit_lab_\graph\17.png)
+![](https://github.com/taleman1997/Digital_lab_3/blob/master/Review_digit_lab_/graph/17.png)
 
 If we want to reuse the code, we can use the wrapper:
 
