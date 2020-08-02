@@ -8,7 +8,7 @@ Implement a decimal up timer that displays its result in seconds on the 7-segmen
 
 Following instruction, the whole task can be divided into several parts to increase the modularity which will make the debug easier. The structure of the module is as below:
 
-![](C:\Users\taleman\Desktop\Review_digit_lab_\graph\18.png)
+![](https://github.com/taleman1997/Digital_lab_3/blob/master/Review_digit_lab_/graph/18.png)
 
 17 bit counter takes the clock input (100MHz), counting clock cycles up to 99999 then reset to 0. So the output frequency of 17-bit counter is 1kHz
 $$
@@ -30,7 +30,7 @@ Each of the outputs from the later four 4-bit counters are joined by an addition
 
 There are 5 counters in the design. Therefore, creating a generic counter which can allow the creation of Verilog modules with variable characteristics which could be defined upon instantiation.
 
-![](C:\Users\taleman\Desktop\Review_digit_lab_\graph\19.png)
+![](https://github.com/taleman1997/Digital_lab_3/blob/master/Review_digit_lab_/graph/19.png)
 
 As the diagram shows, there are three inputs  ENABLE,RESET and CLK. The outputs of the counter are its current COUNT whose size is depending on the size of the counter. And a single bit TRIG_OUT which is set to 1 for a single clock cycle when ever the counter resets to 0.
 
@@ -128,7 +128,7 @@ endmodule
 
 First I need to create a top module and give it an interface that includes CLK, RESET, ENABLE, SET_SELECT, DEC_OUT. The structure can check the picture below.
 
-![](C:\Users\taleman\Desktop\Review_digit_lab_\graph\18.png)
+![](https://github.com/taleman1997/Digital_lab_3/blob/master/Review_digit_lab_/graph/18.png)
 
 The code are as below
 
