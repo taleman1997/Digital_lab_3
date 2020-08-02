@@ -10,7 +10,7 @@ A state machine is a synchronous system that has a memory. Therefore, it can not
 
  **Typically, there are two logic blocks, one is synchronous the other is asynchronous.** 
 
-![](C:\Users\taleman\Desktop\Review_digit_lab_\graph\24.png)
+![](https://github.com/taleman1997/Digital_lab_3/blob/master/Review_digit_lab_/graph/24.png)
 
 The diagram above show how a state machine works. The synchronous logic latches the state of the OUTPUTS and CURRENT STATE upon the rising edge of each clock. The asynchronous logic determines what the next state is going to be.
 
@@ -39,7 +39,7 @@ end
 
 The asynchronous combinational logic is important as ti makes all the decisions regarding the value of the next state. If we have the structure below, we can achieve by this code:
 
-![](C:\Users\taleman\Desktop\Review_digit_lab_\graph\25.png)
+![](https://github.com/taleman1997/Digital_lab_3/blob/master/Review_digit_lab_/graph/25.png)
 
 ```verilog
 always@（IN or Curr_state) begin
@@ -82,11 +82,11 @@ end
 
 Then create a maze game like this:
 
-![](C:\Users\taleman\Desktop\Review_digit_lab_\graph\26.png)
+![](https://github.com/taleman1997/Digital_lab_3/blob/master/Review_digit_lab_/graph/26.png)
 
 Then the structure of the program is as below.
 
-![](C:\Users\taleman\Desktop\Review_digit_lab_\graph\27.png)
+![](https://github.com/taleman1997/Digital_lab_3/blob/master/Review_digit_lab_/graph/27.png)
 
 **NOTE:** After loading the bitstream to the board, I find that the state is not stable. When I press the button, ti change to a new state but when loose it, it go back to zero or other state. The reason is that there is not `else` in one case. Then need to add
 
