@@ -20,7 +20,7 @@ The process of creating the state machine is much similar to that in module 11. 
 
 The sequence of the LED is as below. It should be notice that to let the LED light for a while, there should be a counter to control it.
 
-![](C:\Users\taleman\Desktop\Review_digit_lab_\graph\29.png)
+![](https://github.com/taleman1997/Digital_lab_3/blob/master/Review_digit_lab_/graph/29.png)
 
 ```verilog
 module LED_DisplaySM(
